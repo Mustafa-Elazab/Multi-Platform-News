@@ -33,6 +33,7 @@ kotlinxCoroutines = "1.7.3"
 kotlinxDateTime = "0.4.0"
 koinVersion = "3.5.0"
 koinAndroidXCompose = "3.5.0"
+lifecycleViewmodelCompose = "2.6.2"
 
 # Define the libraries
 [libraries]
@@ -71,8 +72,10 @@ koinCompose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "
 kamelImageLoader = { module = "media.kamel:kamel-image", version.ref = "kamelImageLoaderVersion" }
 voyagerNavigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyagerVersion" }
 voyagerTransitions = { module = "cafe.adriel.voyager:voyager-transitions", version.ref = "voyagerVersion" }
+voyager-koin = { module = "cafe.adriel.voyager:voyager-koin", version.ref = "voyagerVersion" }
 calfAdaptiveUi = { module = "com.mohamedrejeb.calf:calf-ui", version.ref = "calfAdaptiveUiVersion" }
 napier = { module = "io.github.aakira:napier", version.ref = "napierVersion" }
+lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycleViewmodelCompose" }
 
 # Define bundles/groups of libraries
 [bundles]

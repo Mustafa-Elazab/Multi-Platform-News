@@ -42,7 +42,7 @@ kotlin {
                 implementation(compose.material3)
                 implementation(compose.animation)
                 implementation(compose.materialIconsExtended)
-
+                implementation(libs.voyager.koin)
                 api(libs.bundles.multiplatformLibs)
             }
         }
@@ -97,6 +97,9 @@ android {
     kotlin {
         jvmToolchain(17)
     }
+}
+dependencies {
+    implementation(libs.lifecycle.viewmodel.compose)
 }
 
 

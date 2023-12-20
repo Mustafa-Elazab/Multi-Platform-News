@@ -14,12 +14,13 @@ import me.inassar.common.composable.TopBar
 import me.inassar.common.config.Platform
 import me.inassar.features.feature.presentation.ui.products.ProductsScreen
 import me.inassar.platform.currentPlatform
+import me.inassar.presentation.screens.home.HomeScreen
 
 @Composable
 fun App() {
     MaterialTheme {
         Navigator(
-            screen = ProductsScreen
+            screen = HomeScreen()
         ) { navigator ->
             Scaffold(
                 topBar = {

@@ -16,6 +16,7 @@ fun initKoinForAndroid(enableNetworkLogs: Boolean, appDeclaration: KoinAppDeclar
             remoteModule,
             cacheModule,
             repositoryModule,
+            useCaseModule,
             viewModelModule
         )
     }

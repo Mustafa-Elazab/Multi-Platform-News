@@ -54,11 +54,13 @@ fun ktorHttpClient(
         socketTimeoutMillis = TIMEOUT
     }
 
+
     install(ContentNegotiation) {
         json(Json {
             isLenient = true
             prettyPrint = true
             ignoreUnknownKeys = true
+            explicitNulls = false
         })
     }
 
@@ -78,17 +80,13 @@ fun ktorHttpClient(
     }
 }
 
-/**
- * @param baseUrl: passing a new baseUrl will override the default one, so you can
- * use multiple baseUrls using same client.
- * @param endpoint: pass your endpoint here to be able to perform your request.
- */
-fun HttpRequestBuilder.performCall(endpoint: String, baseUrl: String = TemplateConfig.BASE_URL) = url {
-    takeFrom(baseUrl)
+
+fun HttpRequestBuilder.performCall(endpoint: String) = url {
+    takeFrom("https://student.valuxapps.com/")
     encodedPath = endpoint
     headers {
         append(
-            HttpHeaders.Authorization, "tokenFromSession"
+            HttpHeaders.Authorization, "NN8p3D6X3dQL0GllyvSSQwY4J4v2fDQ8wIdQWDrnVGNoYrDMpkdVuLgEN6HULhotByHqjK"
         )
     }
 }
