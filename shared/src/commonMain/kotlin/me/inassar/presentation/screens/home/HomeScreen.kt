@@ -8,10 +8,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
@@ -36,13 +38,16 @@ class HomeScreen : Screen {
         val navigator = LocalNavigator.currentOrThrow
 
 
-        Scaffold() { padding ->
+        Surface() {
 
-            Column() {
-                Text("Banners", modifier = Modifier.padding(horizontal = 8.dp, vertical = 6.dp))
+            Column(
+                verticalArrangement = Arrangement.SpaceBetween,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+
+                Text("Banners", modifier = Modifier.padding(horizontal = 8.dp, vertical = 6.dp).align(Alignment.Start))
                 ManagementResourceUiState(
                     modifier = Modifier
-                        .padding(padding)
                         .fillMaxWidth()
                         .height(180.dp),
                     resourceUiState = state.banners,
@@ -58,8 +63,6 @@ class HomeScreen : Screen {
 //                       }
                         )
                     },
-                    onTryAgain = { /*homeViewModel.setEvent(HomeContracts.Event.OnTryCheckAgainClick)*/ },
-                    onCheckAgain = { /*homeViewModel.setEvent(HomeContracts.Event.OnTryCheckAgainClick)*/ },
                 )
                 Row(horizontalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxWidth()) {
                     Text("Categories")
@@ -67,7 +70,6 @@ class HomeScreen : Screen {
                 }
                 ManagementResourceUiState(
                     modifier = Modifier
-                        .padding(padding)
                         .fillMaxWidth()
                         .height(200.dp),
                     resourceUiState = state.categories,
@@ -83,8 +85,6 @@ class HomeScreen : Screen {
 //                       }
                         )
                     },
-                    onTryAgain = { /*homeViewModel.setEvent(HomeContracts.Event.OnTryCheckAgainClick)*/ },
-                    onCheckAgain = { /*homeViewModel.setEvent(HomeContracts.Event.OnTryCheckAgainClick)*/ },
                 )
 
                 Row(horizontalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxWidth()) {
@@ -93,7 +93,6 @@ class HomeScreen : Screen {
                 }
                 ManagementResourceUiState(
                     modifier = Modifier
-                        .padding(padding)
                         .fillMaxWidth()
                         .height(200.dp),
                     resourceUiState = state.products,
@@ -109,8 +108,6 @@ class HomeScreen : Screen {
 //                       }
                         )
                     },
-                    onTryAgain = { /*homeViewModel.setEvent(HomeContracts.Event.OnTryCheckAgainClick)*/ },
-                    onCheckAgain = { /*homeViewModel.setEvent(HomeContracts.Event.OnTryCheckAgainClick)*/ },
                 )
 
             }

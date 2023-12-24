@@ -1,81 +1,82 @@
 package me.inassar.data.remote.dto
 
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-
-
-@Serializable
-data class ProductsDTO(
-
-    val `data`: ProductPaginationDTO,
-
-    val message: String?,
-
-    val status: Boolean?
-)
-
-
-
-
-@Serializable
-data class ProductPaginationDTO(
-
-    val currentPage: Int,
-
-    val `data`: List<ProductDTO>,
-
-    val firstPageUrl: String,
-
-    val from: Int,
-
-    val lastPage: Int,
-
-    val lastPageUrl: String?,
-
-    val nextPageUrl: Int?,
-
-    val path: String?,
-
-    val perPage: Int?,
-
-    val prevPageUrl: Int?,
-
-    val to: Int?,
-
-    val total: Int?
-)
 
 @Serializable
 data class ProductsDetailDTO(
 
-    val `data`: ProductDTO?,
-
-    val message: String?,
-
-    val status: Boolean?
+    @SerialName("data")
+    val `data`: ProductDTO? = null,
+    @SerialName("message")
+    val message: String? = null,
+    @SerialName("status")
+    val status: Boolean? = null
 )
 
 
 @Serializable
+data class ProductsDTO(
+    @SerialName("data")
+    val `data`: ProductPaginationDTO? = null,
+    @SerialName("message")
+    val message: String? = null,
+    @SerialName("status")
+    val status: Boolean? = null
+)
+
+@Serializable
+data class ProductPaginationDTO(
+    @SerialName("current_page")
+    val currentPage: Int?=null,
+    @SerialName("data")
+    val `data`: List<ProductDTO>?=null,
+    @SerialName("first_page_url")
+    val firstPageUrl: String?=null,
+    @SerialName("from")
+    val from: Int?=null,
+    @SerialName("last_page")
+    val lastPage: Int?=null,
+    @SerialName("last_page_url")
+    val lastPageUrl: String?=null,
+    @SerialName("next_page_url")
+    val nextPageUrl: String?=null,
+    @SerialName("path")
+    val path: String?=null,
+    @SerialName("per_page")
+    val perPage: Int?=null,
+    @SerialName("prev_page_url")
+    val prevPageUrl: Int?=null,
+    @SerialName("to")
+    val to: Int?=null,
+    @SerialName("total")
+    val total: Int?=null
+
+
+)
+
+@Serializable
 data class ProductDTO(
+    @SerialName("description")
+    val description: String?=null,
+    @SerialName("discount")
+    val discount: Int?=null,
+    @SerialName("id")
+    val id: Int?=null,
+    @SerialName("image")
+    val image: String?=null,
+    @SerialName("images")
+    val images: List<String>?=null,
+    @SerialName("in_cart")
+    val inCart: Boolean?=null,
+    @SerialName("in_favorites")
+    val inFavorites: Boolean?=null,
+    @SerialName("name")
+    val name: String?=null,
+    @SerialName("old_price")
+    val oldPrice: Double?=null,
+    @SerialName("price")
+    val price: Double?=null
 
-    val description: String?,
-
-    val discount: Int?=0,
-
-    val id: Int?,
-
-    val image: String?,
-
-    val images: List<String?>?,
-
-    var inCart: Boolean,
-
-    val inFavorites: Boolean,
-
-    val name: String?,
-
-    val oldPrice: Double=0.0,
-
-    val price: Double?
 )

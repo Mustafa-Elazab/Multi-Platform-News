@@ -4,6 +4,7 @@ import me.inassar.data.remote.dto.BannerDTO
 import me.inassar.data.remote.dto.BannersDTO
 import me.inassar.data.remote.dto.CategoriesDTO
 import me.inassar.data.remote.dto.ProductsDTO
+import me.inassar.domain.model.ProductsModel
 import me.inassar.presentation.screens.utils.ResourceUiState
 import me.inassar.presentation.screens.utils.UiEffect
 import me.inassar.presentation.screens.utils.UiEvent
@@ -20,7 +21,7 @@ interface HomeContracts {
     data class State(
         val banners: ResourceUiState<BannersDTO>,
         val categories : ResourceUiState<CategoriesDTO>,
-        val products : ResourceUiState<ProductsDTO>
+        val products : ResourceUiState<ProductsModel>
     ) : UiState
 
     sealed interface Effect : UiEffect {

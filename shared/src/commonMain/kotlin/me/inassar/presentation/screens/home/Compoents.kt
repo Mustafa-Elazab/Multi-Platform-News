@@ -24,6 +24,7 @@ import me.inassar.common.composable.LoadImage
 import me.inassar.data.remote.dto.BannerDTO
 import me.inassar.data.remote.dto.CategoryDTO
 import me.inassar.data.remote.dto.ProductDTO
+import me.inassar.domain.model.ProductModel
 
 @Composable
 fun BannersList(
@@ -59,7 +60,7 @@ fun CategoriesList(
 
 @Composable
 fun ProductsList(
-    products: List<ProductDTO?>
+    products: List<ProductModel?>
 ) {
     LazyVerticalGrid(
         modifier = Modifier
@@ -118,7 +119,7 @@ fun CategoryItem(category: CategoryDTO) {
 }
 
 @Composable
-fun ProductItem(product: ProductDTO) {
+fun ProductItem(product: ProductModel) {
 
     Column(modifier = Modifier.padding(2.dp)) {
         LoadImage(

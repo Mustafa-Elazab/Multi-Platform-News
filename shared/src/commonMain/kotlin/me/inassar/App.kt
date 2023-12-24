@@ -23,14 +23,7 @@ fun App() {
             screen = HomeScreen()
         ) { navigator ->
             Scaffold(
-                topBar = {
-                TopBar(
-                    title = navigator.lastItem.key,
-                    canPop = navigator.canPop,
-                    appBarColor = Color.Red,
-                    statusBarColor = Color.Red,
-                    onNavigationBackClick = { navigator.pop() })
-            }
+
             ) { paddingValues ->
                 when (currentPlatform) {
                     Platform.IOS -> SlideTransition(
