@@ -6,8 +6,12 @@ buildscript{
     }
     dependencies {
         classpath(libs.classpath.buildKonfig)
+        classpath("dev.icerock.moko:resources-generator:0.22.3")
+
     }
+
 }
+
 
 plugins {
     alias(libs.plugins.jvm) apply false

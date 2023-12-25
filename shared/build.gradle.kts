@@ -10,6 +10,7 @@ plugins {
     alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.plugin.serialization)
     id(libs.plugins.plugin.buildKonfig.get().pluginId)
+    id("dev.icerock.mobile.multiplatform-resources")
 }
 
 kotlin {
@@ -31,6 +32,8 @@ kotlin {
             baseName = "shared"
             isStatic = true
             export(libs.calfAdaptiveUi)
+            export("dev.icerock.moko:resources:0.22.3")
+            export("dev.icerock.moko:graphics:0.9.0")
         }
     }
 
@@ -40,10 +43,12 @@ kotlin {
                 implementation(compose.runtime)
                 implementation(compose.foundation)
                 implementation(compose.material3)
+                implementation(compose.material)
                 implementation(compose.animation)
                 implementation(compose.materialIconsExtended)
                 implementation(libs.voyager.koin)
                 api(libs.bundles.multiplatformLibs)
+                api("dev.icerock.moko:resources:0.22.3")
             }
         }
         val androidMain by getting {
@@ -172,4 +177,10 @@ buildkonfig {
             }
         }
     }
+}
+
+
+multiplatformResources {
+    multiplatformResourcesPackage = "me.inassar.MyApp"
+    multiplatformResourcesClassName = "SharedRes"
 }
